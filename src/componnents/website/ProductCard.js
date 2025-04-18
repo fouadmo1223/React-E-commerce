@@ -153,12 +153,7 @@ export default function ProductCard({ product }) {
       localStorage.setItem("products", JSON.stringify(products));
       setQuantity(1); // Reset quantity after adding
 
-      console.log("Updated cart:", products);
-      toast.success(
-        existingProduct
-          ? `Added ${quantity} more (Total: ${existingProduct.quantity})`
-          : `Added ${quantity} to cart`
-      );
+     
     } else {
       LoginFirst();
     }

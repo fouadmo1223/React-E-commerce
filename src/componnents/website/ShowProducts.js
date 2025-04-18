@@ -160,7 +160,7 @@ export default function FirstSection() {
     navigate(`/product/${productId}`);
   };
 
-const handleAddToCart = (quantity,product) => {
+const handleAddToCart = (e , product,quantity) => {
   if (isLoggedIn) {
     const products = JSON.parse(localStorage.getItem("products")) || [];
 
@@ -181,11 +181,7 @@ const handleAddToCart = (quantity,product) => {
     setQuantity(1); // Reset quantity after adding
 
     console.log("Updated cart:", products);
-    toast.success(
-      existingProduct
-        ? `Added ${quantity} more (Total: ${existingProduct.quantity})`
-        : `Added ${quantity} to cart`
-    );
+  
   } else {
    LoginFirst()
   }
